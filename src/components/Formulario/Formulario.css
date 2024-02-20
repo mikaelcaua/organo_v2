@@ -1,16 +1,20 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+
 .formulario{
     display: flex;
     justify-content: center;
     margin-top: 80px;
 }
 
-form{
+.formulario form{
     display: flex;
     flex-direction: column;
     align-items: center;
     
     background-color:#F6F6F6;
-    padding: 33px 3% 8px 3%;
+    padding: 33px 3% 32px 3%;
     border-radius: 20px;
     box-sizing: border-box;
     box-shadow: 7px 7px 15px 0 #00000014;
@@ -19,18 +23,21 @@ form{
 .formulario h2{
     padding: 0 0 42px 0;
     text-align: center;
+    font-family: "Prata", serif;
+    font-weight: 400;
+    font-size: 32px;
 
 }
 
-@media(max-width:450px){
+@media(max-width:500px){
     form{
-        width: 100%;
+        width: 90%;
     }
 }
 
-@media(min-width:451px){
+@media(min-width:501px){
     form{
-        width: 90%;
+        width: 75%;
     }
 }
 
