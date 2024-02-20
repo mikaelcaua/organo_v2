@@ -1,11 +1,11 @@
 import './CampoSelect.css'
 
-const CampoSelect = ({times})=>{
+const CampoSelect = ({times, aoAlterar})=>{
     return(
         <div className='camposelect'>
             <label>Time</label>
-            <select>
-                {times.map(time=> <option key={time} value={time}>{time}</option>)}
+            <select onChange={aoAlterar}>
+                {times.map(time=> <option key={time} value={time} >{time}</option>)}
             </select>
         </div>
     )

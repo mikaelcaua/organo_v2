@@ -1,28 +1,42 @@
+import { useState } from 'react';
 import Botao from './Botao/Botao';
 import CampoSelect from './CampoSelect/CampoSelect';
 import CampoTexto from './CampoTexto/CampoTexto';
 import './Formulario.css'
 
 const Formulario = ({times})=>{
-    
+
+    const [nome, setNome] = useState(' ');
+    const [cargo, setCargo] = useState(' ');
+    const [imagem, setImagem] = useState(' ');
+    const [time, setTime] = useState(' ');
+
+    const  aoEnviar=(event)=>{
+        event.preventDefault();
+        console.log(nome, cargo, imagem, time);
+    }
+
     return(
         <div className='formulario' >
-            <form >
+            <form onSubmit={aoEnviar}>
 
                 <h2>Preencha os dados para criar o card do colaborador</h2>
 
-                <CampoTexto name="Nome"></CampoTexto>
+                <CampoTexto 
+                aoAlterar={(event)=>{setNome(event.target.value);}} 
+                name="Nome"></CampoTexto>
 
-                <CampoTexto name="Cargo"></CampoTexto>
+                <CampoTexto
+                aoAlterar={(event)=>{setCargo(event.target.value)}} 
+                name="Cargo"></CampoTexto>
 
-                <CampoTexto name="Imagem"></CampoTexto>
+                <CampoTexto
+                aoAlterar={(event)=>{setImagem(event.target.value)}} 
+                name="Imagem"></CampoTexto>
 
-                <CampoSelect times={times.map(time=>time.nome) }></CampoSelect>
+                <CampoSelect aoAlterar={(event)=>{setTime(event.target.value)}} times={times.map(time=>time.nome) }></CampoSelect>
 
-                <Botao aoEnviar={(event)=>{
-                    event.preventDefault();
-                    console.log('funcionou')
-                }}></Botao>
+                <Botao>Criar Card</Botao>
 
             </form>
         </div>

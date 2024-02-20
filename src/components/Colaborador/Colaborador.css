@@ -1,0 +1,15 @@
+.colaborador{
+    display: flex;
+    flex-direction: column;
+    height: 272px;
+    width: 250px;
+    align-items: center;
+}
+
+ .colaborador img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+}
+

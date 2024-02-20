@@ -1,9 +1,9 @@
 import './Botao.css'
 
-const Botao = ({aoEnviar})=>{
+const Botao = (props)=>{
     return(
         <div className='botao'>
-            <button onClick={aoEnviar}>Criar Card</button>
+            <button onClick={props.aoEnviar}>{props.children}</button>
         </div>
     )
 }
