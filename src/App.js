@@ -27,11 +27,13 @@ function App() {
   const colaboradores = [
     {time:'Programação',
      url:'imagens/banner.png',
-     name:'1'}
+     name:'1',
+     description:'teste1'}
      ,
      {time:'Data Science',
       url:'imagens/banner.png',
-      name:'2'}
+      name:'2',
+      description:'teste2'}
   ]
 
   return (

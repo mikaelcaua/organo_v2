@@ -4,12 +4,13 @@
     height: 272px;
     width: 250px;
     align-items: center;
+    background-color: white;
+    margin-top: 38px;
 }
 
  .colaborador img{
     width: 100px;
     height: 100px;
     border-radius: 50%;
-
 }
 
