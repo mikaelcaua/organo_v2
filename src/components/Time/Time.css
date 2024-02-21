@@ -7,10 +7,19 @@
     flex-direction: column;
 }
 
-.time h2{
+.timename{
     text-align: center;
     font-family: 'Prata', sans-serif;
     font-weight: 400;
     font-size: 32px;
     border-bottom: 2px solid;
+}
+
+.containercards{
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    justify-content: center;
 }

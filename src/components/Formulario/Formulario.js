@@ -4,16 +4,16 @@ import CampoSelect from './CampoSelect/CampoSelect';
 import CampoTexto from './CampoTexto/CampoTexto';
 import './Formulario.css'
 
-const Formulario = ({times})=>{
+const Formulario = ({times ,onSubmit})=>{
 
-    const [nome, setNome] = useState(' ');
-    const [cargo, setCargo] = useState(' ');
-    const [imagem, setImagem] = useState(' ');
-    const [time, setTime] = useState(' ');
+    const [nome, setNome] = useState('');
+    const [cargo, setCargo] = useState('');
+    const [imagem, setImagem] = useState('');
+    const [time, setTime] = useState('');
 
     const  aoEnviar=(event)=>{
         event.preventDefault();
-        console.log(nome, cargo, imagem, time);
+        onSubmit(nome, cargo, imagem, time);
     }
 
     return(
@@ -34,11 +34,11 @@ const Formulario = ({times})=>{
                 aoAlterar={(event)=>{setImagem(event.target.value)}} 
                 name="Imagem"></CampoTexto>
 
-                <CampoSelect aoAlterar={(event)=>{setTime(event.target.value)}} times={times.map(time=>time.nome) }></CampoSelect>
+                <CampoSelect aoAlterar={(event)=>{setTime(event.target.value)}} timesnomes={times.map(time=>time.name) }></CampoSelect>
 
-                <Botao>Criar Card</Botao>
+                <Botao >Criar Card</Botao>
 
-            </form>
+            </form >
         </div>
     )
 }

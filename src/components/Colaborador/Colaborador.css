@@ -1,16 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 .colaborador{
     display: flex;
     flex-direction: column;
-    height: 272px;
-    width: 250px;
+    height: 269px;
+    width: 262px;
     align-items: center;
     background-color: white;
     margin-top: 38px;
+    border-radius: 10px;
+    position: relative;
+    
 }
 
- .colaborador img{
-    width: 100px;
-    height: 100px;
+.colaboradorfundo{
+    border-radius: 10px 10px 0px 0px;
+    height:91px; 
+    width:100%;
+}
+
+.colaborador img{
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
+    position: absolute;
+    top: 40px;
+}
+
+.colaborador h2{
+    padding-top: 87px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #6278F7;
+}
+
+.colaborador h3{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    padding-top: 9px;
 }
 

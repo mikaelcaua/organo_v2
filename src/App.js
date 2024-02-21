@@ -1,7 +1,5 @@
-
-
+import { useState } from 'react';
 import Banner from './components/Banner/Banner';
-import Colaborador from './components/Colaborador/Colaborador';
 import Formulario from './components/Formulario/Formulario';
 import Time from './components/Time/Time';
 
@@ -24,22 +22,21 @@ function App() {
     primarycolor:'#E06B69'}
   ]
 
-  const colaboradores = [
-    {time:'Programação',
-     url:'imagens/banner.png',
-     name:'1',
-     description:'teste1'}
-     ,
-     {time:'Data Science',
-      url:'imagens/banner.png',
-      name:'2',
-      description:'teste2'}
-  ]
+  const [colaboradores, setColaboradores] = useState([
+
+  ]);
+
+  const adicionarColaboradores = (nome, cargo, imagem, time) => {
+    if(time!='Selecione uma opção' && nome!='' && cargo!='' && imagem!=''){
+      setColaboradores([...colaboradores, { time: time, url: imagem, name: nome, description: cargo }]);
+    }
+    
+  };
 
   return (
     <>
       <Banner src="imagens/banner.png"></Banner>
-      <Formulario times={times}></Formulario>
+      <Formulario times={times} onSubmit={adicionarColaboradores}></Formulario>
       {times.map((time)=>{
         return <Time key={time.name} colaboradores={colaboradores} name={time.name} primarycolor={time.primarycolor} secundarycolor={time.secundarycolor}></Time>
       })}
