@@ -1,25 +1,34 @@
-import { useState } from 'react';
-import Botao from './Botao/Botao';
-import CampoSelect from './CampoSelect/CampoSelect';
-import CampoTexto from './CampoTexto/CampoTexto';
 import './Formulario.css'
 
-const Formulario = ({times ,onSubmit})=>{
+import React, { InputHTMLAttributes, useState } from 'react';
+
+import {CampoSelect} from './CampoSelect';
+import {CampoTexto} from './CampoTexto';
+import { Botao } from './Botao';
+
+interface FormularioProps{
+    times:{name:string;
+           secundarycolor:string
+           primarycolor:string}[]
+    onSubmit: (nome:string, cargo:string, imagem:string, time:string)=>void
+}
+
+const Formulario = ({times ,onSubmit}:FormularioProps)=>{
 
     const [nome, setNome] = useState('');
     const [cargo, setCargo] = useState('');
     const [imagem, setImagem] = useState('');
     const [time, setTime] = useState('');
 
-    const  aoEnviar=(event)=>{
+    const aoEnviar = (event: React.FormEvent) => {
         event.preventDefault();
         onSubmit(nome, cargo, imagem, time);
-    }
+    };
 
     return(
         <div className='formulario' >
             <form onSubmit={aoEnviar}>
-
+          
                 <h2>Preencha os dados para criar o card do colaborador</h2>
 
                 <CampoTexto 
@@ -34,7 +43,7 @@ const Formulario = ({times ,onSubmit})=>{
                 aoAlterar={(event)=>{setImagem(event.target.value)}} 
                 name="Imagem"></CampoTexto>
 
-                <CampoSelect aoAlterar={(event)=>{setTime(event.target.value)}} timesnomes={times.map(time=>time.name) }></CampoSelect>
+                <CampoSelect aoAlterar={(event:any)=>{setTime(event.target.value)}} timesnomes={times.map(time=>time.name) }></CampoSelect>
 
                 <Botao >Criar Card</Botao>
 

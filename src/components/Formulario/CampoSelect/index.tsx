@@ -1,6 +1,11 @@
 import './CampoSelect.css'
 
-const CampoSelect = ({timesnomes, aoAlterar})=>{
+interface CampoSelectProps{
+    timesnomes: string[]
+    aoAlterar: (event:React.ChangeEvent)=>void
+}
+
+export function CampoSelect ({timesnomes, aoAlterar}:CampoSelectProps){
     return(
         <div className='camposelect'>
             <label>Time</label>
@@ -12,4 +17,3 @@ const CampoSelect = ({timesnomes, aoAlterar})=>{
     )
 }
 
-export default CampoSelect;

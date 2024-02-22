@@ -1,6 +1,14 @@
+
 import './Colaborador.css'
 
-const Colaborador = ({name, description, color , url})=>{
+interface ColaboradorProps{
+    name:string
+    description:string
+    color:string
+    url:string
+}
+
+export function Colaborador ({name, description, color , url}:ColaboradorProps){
     return(
         <div className='colaborador'>
             <div style={{backgroundColor:color}} className='colaboradorfundo' ></div>
@@ -12,4 +20,3 @@ const Colaborador = ({name, description, color , url})=>{
     
 }
 
-export default Colaborador;

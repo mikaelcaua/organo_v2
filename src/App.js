@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Banner from './components/Banner/Banner';
-import Formulario from './components/Formulario/Formulario';
-import Time from './components/Time/Time';
+import Formulario from './components/Formulario';
+import {Time} from './components/Time';
+import {Banner} from './components/Banner';
 
 function App() {
   const times = [

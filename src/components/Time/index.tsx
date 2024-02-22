@@ -1,8 +1,15 @@
-import { useState } from 'react';
-import Colaborador from '../Colaborador/Colaborador';
+import { IColaborador } from '../../interfaces/IColaborados';
+import {Colaborador} from '../Colaborador';
 import './Time.css'
 
-const Time = ({ name, primarycolor, secundarycolor, colaboradores }) => {
+interface TimeProps{
+    name:string;
+    primarycolor:string;
+    secundarycolor:string;
+    colaboradores:IColaborador[]
+}
+
+export function Time({ name, primarycolor, secundarycolor, colaboradores }:TimeProps) {
   // Verifica se existem colaboradores
   const temColaboradores = colaboradores.some(colaborador => colaborador.time === name);
 
@@ -23,5 +30,3 @@ const Time = ({ name, primarycolor, secundarycolor, colaboradores }) => {
   );
 }
 
-
-export default Time;
