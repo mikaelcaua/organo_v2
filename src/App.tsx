@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Formulario from './components/Formulario';
 import {Time} from './components/Time';
 import {Banner} from './components/Banner';
+import { IColaborador } from './interfaces/IColaborados';
 
 function App() {
   const times = [
@@ -22,15 +23,12 @@ function App() {
     primarycolor:'#E06B69'}
   ]
 
-  const [colaboradores, setColaboradores] = useState([
+  const [colaboradores, setColaboradores] = useState<IColaborador[]>([]);
 
-  ]);
-
-  const adicionarColaboradores = (nome, cargo, imagem, time) => {
+  const adicionarColaboradores = (nome:string, cargo:string, imagem:string, time:string) => {
     if(time!='Selecione uma opção' && nome!='' && cargo!='' && imagem!=''){
       setColaboradores([...colaboradores, { time: time, url: imagem, name: nome, description: cargo }]);
     }
-    
   };
 
   return (
